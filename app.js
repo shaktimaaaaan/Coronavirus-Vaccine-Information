@@ -19,15 +19,17 @@ app.post("/", (req, res) => {
     console.log("statusCode:", response.statusCode);
 
     response.on("data", (data) => {
-      for (let i = 0; i < 18; i++) {
-        const cowin_data = JSON.parse(data);
+      const cowin_data = JSON.parse(data);
+
+      const centers = cowin_data.centers; // centers array
+      for (let i = 0; i < centers.length; i++) {
         const center_name = cowin_data.centers[i].name;
         const center_address = cowin_data.centers[i].address;
         const from = cowin_data.centers[i].from;
         const to = cowin_data.centers[i].to;
         const fee_type = cowin_data.centers[i].fee_type;
 
-        const sessions = cowin_data.centers[i].sessions;
+        const sessions = cowin_data.centers[i].sessions; //sessions array
         for (let j = 0; j < sessions.length; j++) {
           const date = cowin_data.centers[i].sessions[j].date;
           const min_age_limit = cowin_data.centers[i].sessions[j].min_age_limit;
