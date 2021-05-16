@@ -5,20 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vaccination Session</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>Vaccination sessions for 7 days from a specific date in a given pin</h1>
+    <div>
+      <h1 class="display-3 fw-normal">Vaccination Sessions</h1>
 
-    <form action="/" method="post" autocomplete="off">
-      <label for="pincodeInput">Enter Pincode: </label>
-      <input type="text" name="user_pincode" placeholder="Pincode" />
-      <br />
-      <br />
-      <label for="dateInput">Enter Date: </label>
-      <input type="text" name="user_date" placeholder="Date (DD-MM-YYYY)" />
-      <br />
-      <br />
-      <button type="submit">Go</button>
-    </form>
+      <form action="/" method="post" autocomplete="off">
+        <div class="mb-3">
+          <label for="pincodeInput">Enter Pincode: </label>
+          <input type="text" name="user_pincode" placeholder="Pincode" />
+        </div>
+
+        <div class="mb-3">
+          <label for="dateInput">Enter Date: </label>
+          <input type="text" name="user_date" placeholder="Date (DD-MM-YYYY)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Go</button>
+      </form>
+    </div>
   </body>
 </html>
